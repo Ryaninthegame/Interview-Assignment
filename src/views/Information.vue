@@ -41,6 +41,7 @@ import TopHeader from "../components/Top-Header";
             },
             changePassword(){
                 // check haha OO
+                // GG
                 var user = firebase.auth().currentUser;
                 if((this.password_1 === this.password_2) && (this.password_1.length>=6) && (this.password_2.length>=6)){
                     user.updatePassword(this.password_2);
