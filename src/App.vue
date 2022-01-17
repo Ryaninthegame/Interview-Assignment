@@ -1,12 +1,19 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      HelloWorld Login System
+      <router-link to="/login"></router-link>
+      <router-link to="/register"></router-link>
     </div>
     <router-view/>
   </div>
 </template>
+
+<script>
+export default{
+  
+}
+</script>
 
 <style lang="scss">
 #app {
