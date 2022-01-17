@@ -32,7 +32,7 @@ import { firebase } from "../db"
         methods:{
             async pressed(){
                 try{
-                    if(this.password_1 === this.password_2){
+                    if((this.password_1 === this.password_2)){
                         const user = await firebase.auth().createUserWithEmailAndPassword(this.email, this.password_1);
                         console.log(user);
                         this.$router.replace({path: '/information/'+this.email});

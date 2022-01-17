@@ -40,14 +40,18 @@ import TopHeader from "../components/Top-Header";
                 this.button = false;
             },
             changePassword(){
+                // check
                 var user = firebase.auth().currentUser;
-                if(this.password_1 === this.password_2){
+                if((this.password_1 === this.password_2) && (this.password_1.length>=6) && (this.password_2.length>=6)){
                     user.updatePassword(this.password_2);
                     alert("Success. Please login in again");
                     this.$router.replace({name:"login"});
                 }
-                else{
-                    alert("The passwords entered are not the same. Please re-enter them.");
+                else if((this.password_1 != this.password_2)){
+                    alert("The passwords entered are not the same. Please re-enter them.")
+                }
+                else if((this.password_1.length<6) || (this.password_2.length<6)){
+                    alert("Password should be at least 6 characters.")
                 }
             }
         }
